@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Welcome — Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes floatUp {
+        0% { transform: translateY(12px); opacity: 0; }
+        50% { transform: translateY(-6px); opacity: 1; }
+        100% { transform: translateY(0); opacity: 1; }
+      }
+      .anim-float { animation: floatUp 1.2s cubic-bezier(.2,.9,.3,1) both; }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 flex items-center justify-center text-white">
+    <section class="text-center p-8">
+      <h1 class="text-5xl font-extrabold mb-4 anim-float bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-pink-300">
+        Welcome to Admin Panel
+      </h1>
+      <p class="text-slate-300 text-lg anim-float" style="animation-delay: 200ms;">
+        Manage your users, settings, and analytics from one powerful dashboard.
+      </p>
+    </section>
+  </body>
+</html>
