@@ -3,6 +3,9 @@ const searchProductBtn = document.getElementById("search-product-btn");
 // const modals = document.getElementById("modals");
 const stockUpdateDiv = document.getElementById("stockUpdateDiv");
 const updateSearchProductForm = document.getElementById("stock-search-form");
+const adminForm = document.getElementById("adminForm");
+const adminCancel = document.getElementById("adminCancel");
+const adminList = document.getElementById("adminList");
 const productNotFound = document.getElementById("product-not-found");
 const loadingForSearchData = document.getElementById("loadingForSearchData");
 const loadingForAddProduct = document.getElementById("loadingForAddProduct");
@@ -149,6 +152,19 @@ function showUpdateStock() {
 function showAddCategory() {
   catListForm.classList.add("hidden");
   addCatform.classList.remove("hidden");
+}
+
+//admi cancel
+const adminCancelBtn = document.getElementById("adminCancel");
+adminCancelBtn.addEventListener("click", function () {
+  adminForm.classList.add("hidden");
+  adminList.classList.remove("hidden");
+});
+// Show/hide add new category form
+function showAddAdmin() {
+  adminList.classList.add("hidden");
+  adminForm.classList.remove("hidden");
+  //adminForm.classList.remove("hidden");
 }
 
 function toggleSidebar() {
@@ -1207,7 +1223,6 @@ confirmBtn.addEventListener("click", async (e) => {
     console.error("Network error:", error);
   }
 });
-
 
 //confirm btn
 cancelBtn.addEventListener("click", async (e) => {

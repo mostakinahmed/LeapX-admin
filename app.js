@@ -13,11 +13,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// app.get("/", (req, res) => {
-//   res.render("home");
-// });
-app.get("/", verifyToken, (req, res) => {
-  res.render("index", { user: req.user });
+app.get("/", verifyToken, async (req, res) => {
+  const allUser = await userModel.find(); // fetch all users
+  res.render("index", { user: req.user, allUser: allUser });
 });
 
 app.get("/add-product", verifyToken, (req, res) => {
@@ -29,19 +27,18 @@ app.get("/signup", (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-  let { username, age, password, email } = req.body;
+  let { username, password, email } = req.body;
 
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(password, salt, async (err, hash) => {
       const userData = await userModel.create({
         username,
-        age,
         password: hash,
         email,
       });
 
-      const token = jwt.sign({ email: email }, "secret");
-      res.cookie("token", token);
+      // const token = jwt.sign({ email: email }, "secret");
+      // res.cookie("token", token);
       res.redirect("/");
     });
   });
