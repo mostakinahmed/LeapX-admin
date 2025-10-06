@@ -616,7 +616,7 @@ async function fetchDashboardData() {
   // Update dashboard elements
   dashboard.innerHTML = ""; //reset dashboard content
   dashboard.innerHTML = `
-     <h1 class="text-3xl font-bold mb-6">Dashboard</h1>
+     
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <div class="bg-gradient-to-r from-green-400 to-emerald-600 p-6 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105">
@@ -1207,6 +1207,7 @@ confirmBtn.addEventListener("click", async (e) => {
     console.error("Network error:", error);
   }
 });
+
 
 //confirm btn
 cancelBtn.addEventListener("click", async (e) => {

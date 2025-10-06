@@ -112,21 +112,42 @@
         <main class="flex-1 p-6 overflow-auto">
             <!-- Dashboard -->
 
-            <section id="dashboard">
-                <!-- load data form api -->
-                <!-- loader -->
-                <section id="loadingDashboard" class="hidden">
-                    <div class="flex items-center justify-center min-h-[300px]">
-                        <div class="flex flex-col items-center space-y-4">
-                            <!-- Spinner -->
-                            <div
-                                class="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin">
-                            </div>
-                            <!-- Text -->
-                            <p class="text-gray-600 font-medium">Loading Dashboard...</p>
-                        </div>
+            <section id="dashboard2">
+                <div class="flex justify-between items-center mb-6 px-4 py-2 bg-gray-100 rounded-lg shadow-md">
+                    <!-- Left title -->
+                    <h1 class="text-3xl font-extrabold text-gray-800">Dashboard</h1>
+
+                    <!-- Right user info -->
+                    <div class="flex items-center gap-2">
+                        <span class="text-gray-600 text-lg">Admin:</span>
+                        <span class="text-blue-600 font-semibold text-2xl">
+                            <%= user.username %>
+                        </span>
+                        <!-- Optional avatar -->
+                        <img src="/images/image.png" alt="Avatar"
+                            class="w-10 h-10 rounded-full border-2 border-blue-600">
                     </div>
+                </div>
+
+
+
+                <section id="dashboard">
+                    <!-- load data form api -->
+                    <!-- loader -->
+                    <section id="loadingDashboard" class="hidden">
+                        <div class="flex items-center justify-center min-h-[300px]">
+                            <div class="flex flex-col items-center space-y-4">
+                                <!-- Spinner -->
+                                <div
+                                    class="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin">
+                                </div>
+                                <!-- Text -->
+                                <p class="text-gray-600 font-medium">Loading Dashboard...</p>
+                            </div>
+                        </div>
+                    </section>
                 </section>
+
             </section>
 
             <!-- charts -->
@@ -160,26 +181,10 @@
                         <span>Stock Update</span>
                     </button>
 
-                    <!-- Right: Add button -->
-                    <!-- <button
-            class="mt-3 sm:mt-0 bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg shadow-md transition transform hover:scale-105 flex items-center space-x-2"
-            onclick="showAddProduct()">
-            <span>+</span>
-            <span>Add New Product</span>
-          </button> -->
 
-                    <a href="./Add Product/form.html">
+                    <a href=" /add-product">
                         <button
-                            class="mt-3 sm:mt-0 bg-red-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg shadow-md transition transform hover:scale-105 flex items-center space-x-2" ">
-              <span>+</span>
-              <span>Add Product Test</span>
-            </button>
-          </a>
-
-
-          <a href=" /add-product">
-                            <button
-                                class="mt-3 sm:mt-0 bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg shadow-md transition transform hover:scale-105 flex items-center space-x-2" ">
+                            class="mt-3 sm:mt-0 bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg shadow-md transition transform hover:scale-105 flex items-center space-x-2" ">
               <span>+</span>
               <span>Add New Product</span>
             </button>
@@ -189,16 +194,16 @@
 
         <!-- loader for edit-->
         <section id=" loadingForEdit" class="hidden">
-                                <div class="flex items-center justify-center min-h-[300px]">
-                                    <div class="flex flex-col items-center space-y-4">
-                                        <!-- Spinner -->
-                                        <div
-                                            class="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin">
-                                        </div>
-                                        <!-- Text -->
-                                        <p class="text-gray-600 font-medium">Loading...</p>
+                            <div class="flex items-center justify-center min-h-[300px]">
+                                <div class="flex flex-col items-center space-y-4">
+                                    <!-- Spinner -->
+                                    <div
+                                        class="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin">
                                     </div>
+                                    <!-- Text -->
+                                    <p class="text-gray-600 font-medium">Loading...</p>
                                 </div>
+                            </div>
             </section>
 
             <!-- update stock Form -->

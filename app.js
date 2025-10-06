@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //   res.render("home");
 // });
 app.get("/", verifyToken, (req, res) => {
-  res.render("index");
+  res.render("index", { user: req.user });
 });
 
 app.get("/add-product", verifyToken, (req, res) => {
@@ -51,21 +51,21 @@ app.get("/login", (req, res) => {
   res.render("login");
 });
 
-
-
 app.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
     const user = await userModel.findOne({ email });
     // if (!user) return res.status(400).send("Invalid email or password.");
-    if (!user) return res.redirect("/login");
+    if (!user) return res.render("login", { invalid: true });
 
     const match = await bcrypt.compare(password, user.password);
     // if (!match) return res.status(400).send("Invalid email or password.");
-    if (!match) return res.redirect("/login");
+    if (!match) return res.render("login", { invalid: true });
 
-    const token = jwt.sign({ email }, "secret", { expiresIn: "1h" });
+    const token = jwt.sign({ email, name: user.username }, "secret", {
+      expiresIn: "2h",
+    });
     res.cookie("token", token, { httpOnly: true }); // secure in prod
     res.redirect("/");
   } catch (err) {
