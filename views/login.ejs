@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/stylesheets/style.css"></script>
     <style>
         @keyframes floatUp {
             0% {
@@ -44,6 +45,26 @@
             animation: fadeIn 1.2s ease-out both;
         }
     </style>
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-70px);
+                /* increased distance */
+            }
+        }
+
+        .animate-float {
+            animation: float 1.2s ease-in-out infinite;
+            /* faster animation */
+        }
+    </style>
+
 </head>
 
 <body class="bg-gray-900 flex items-center justify-center min-h-screen p-6">
@@ -79,16 +100,16 @@
         class="flex flex-col md:flex-row items-center justify-between bg-gray-800/70 backdrop-blur-md rounded-2xl shadow-2xl p-10 md:p-14 max-w-7xl w-full gap-10">
 
         <!-- Left: Animated Welcome Text -->
-        <div class="flex-1 text-center md:text-left">
+        <div class="flex-1 text-center lg:ml-12 md:text-left">
             <h1
                 class="text-4xl md:text-5xl font-extrabold mb-6 anim-float bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-400">
                 Welcome to Admin Panel
             </h1>
 
             <!-- GIF Below -->
-            <div class="flex justify-center fade-in">
-                <img src="https://images.unsplash.com/photo-1509479200622-4503f27f12ef?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhhY2tlcnxlbnwwfHwwfHx8MA%3D%3D"
-                    alt="Admin GIF" class="w-64 md:w-72 lg:mr-[5rem] rounded-full shadow-lg" />
+            <div class="flex justify-center mt-[100px]">
+                <img src="https://images.unsplash.com/photo-1509479200622-4503f27f12ef?fm=jpg&q=60&w=3000"
+                    alt="Admin GIF" class="w-64 md:w-72 rounded-full shadow-lg animate-float" />
             </div>
         </div>
 
